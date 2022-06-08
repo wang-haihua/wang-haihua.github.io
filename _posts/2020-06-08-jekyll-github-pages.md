@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "jekyll+Github Pages搭建个人博客"
+title:  "搭建个人博客"
+subtitle:   " \"jekyll + Github Pages\""
 date:   2022-06-08 13:46:10 +0800
+author:     "清欢"
+catalog: true
 categories: 杂谈
 ---
 ## jekyll+Github Pages搭建个人博客
@@ -155,6 +158,18 @@ $ bundle config --delete 'mirror.https://rubygems.org'
 
 
 
+#### 拷贝模板代码
+
+
+
+#### 修改_config文件
+
+
+
+
+
+
+
 ### 参考资料
 
 [Jekyll官方文档](http://jekyllcn.com/docs/)
@@ -165,3 +180,8 @@ $ bundle config --delete 'mirror.https://rubygems.org'
 
 [修改Gem,Bundler的镜像为国内源](https://www.jianshu.com/p/a56aa38a6403)
 
+[码志 Jekyll 模板](https://mazhuang.org/)
+
+[huxpro Jekyll 模板](https://github.com/Huxpro/huxpro.github.io)
+
+[huxblog-boilerplate](https://github.com/Huxpro/huxblog-boilerplate)

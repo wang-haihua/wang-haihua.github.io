@@ -5,10 +5,12 @@ _site
 vendor
 .bundle
 
-*.sw[po]
-*.~vsd
-\#*\#
-*~
+node_modules
+.vscode
+*.log
+*.lock
+*.sh
 .DS_Store
-Gemfile.lock
-.vscode/
+.jekyll-cache
+*/.DS_Store
+*/*/.DS_Store
