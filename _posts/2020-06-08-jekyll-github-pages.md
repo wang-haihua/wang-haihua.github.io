@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "jekyll+Github Pages搭建个人博客"
+date:   2022-06-08 13:46:10 +0800
+categories: 杂谈
+---
 ## jekyll+Github Pages搭建个人博客
 
 ### 01 Github 新建博客仓库
@@ -78,6 +84,8 @@ jekyll serve
 
 ### 03 博文上传
 
+####  Jekyll 初始化模板
+
 以下是一个获取最简单 Jekyll 模板并生成静态页面并运行的例子
 
 ```
@@ -92,6 +100,35 @@ jekyll serve
 
 就是这么简单。从现在开始，你可以通过创建文章、改变头信息来控制模板和输出、修改 Jekyll 设置来使你的站点变得更有趣
 
+上传到github仓库
+
+#### 撰写博文
+
+​	在目录结构介绍中说明过，所有的文章都在 _posts 文件夹中。这些文件可以用 Markdown 编写，也可以用 Textile 格式编写。只要文件中有 YAML 头信息，它们就会从源格式转化成 HTML 页面，从而成为你的静态网站的一部分。
+
+​	发表一篇新文章，你所需要做的就是在 `_posts` 文件夹中创建一个新的文件。文件名的命名非常重要。Jekyll 要求一篇文章的文件名遵循下面的格式：
+
+```
+年-月-日-标题.MARKUP
+```
+
+​	在这里，`年`是 4 位数字，`月`和`日`都是 2 位数字。`MARKUP`扩展名代表了这篇文章是用什么格式写的。下面是一些合法的文件名的例子：
+
+```
+2011-12-31-new-years-eve-is-awesome.md
+2012-09-12-how-to-write-a-blog.textile
+```
+
+更多内容形式参考官方文档 [撰写博客 - Jekyll • 简单静态博客网站生成器](http://jekyllcn.com/docs/posts/)
+
+#### 本地预览
+
+
+
+
+
+
+
 ### 04 修改主题
 
 
@@ -103,4 +140,6 @@ jekyll serve
 [github建站指南](https://qoclub.site/github%E5%BB%BA%E7%AB%99%E6%8C%87%E5%8D%97.html)
 
 [jekyll主题使用说明文档](https://github.com/jsksxs360/xs-huxblog/blob/master/Document.md)
+
+[修改Gem,Bundler的镜像为国内源](https://www.jianshu.com/p/a56aa38a6403)
 
