@@ -4,3 +4,11 @@ _site
 .jekyll-metadata
 vendor
 .bundle
+
+*.sw[po]
+*.~vsd
+\#*\#
+*~
+.DS_Store
+Gemfile.lock
+.vscode/

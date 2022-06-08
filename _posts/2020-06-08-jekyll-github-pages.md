@@ -125,7 +125,29 @@ jekyll serve
 
 
 
+Jekyll 运行的时候提示错误 cannot load such file -- webrick (LoadError)
 
+这是因为：
+从 Ruby 3.0 开始 webrick 已经不在绑定到 Ruby 中了，请参考链接： [Ruby 3.0.0 Released](https://link.zhihu.com/?target=https%3A//www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/) 中的说明。
+
+webrick 需要手动进行添加。
+
+添加的命令为：
+
+```
+bundle add webrick
+```
+
+如果遇到超时问题，修改bundle的镜像为国内源
+
+```
+# 移除gem默认源，改成ruby-china源
+$ gem sources -r https://rubygems.org/ -a https://gems.ruby-china.com/
+# 使用Gemfile和Bundle的项目，可以做下面修改，就不用修改Gemfile的source
+$ bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+# 删除Bundle的一个镜像源
+$ bundle config --delete 'mirror.https://rubygems.org'
+```
 
 
 
