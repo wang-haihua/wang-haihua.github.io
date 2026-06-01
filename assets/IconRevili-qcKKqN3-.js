@@ -1,0 +1,1 @@
+import{_ as e,o as c,a as o}from"./app-BCtFLHUo.js";const n="/revili.png",s={},r={class:"icon-reco",src:n};function t(_,i){return c(),o("img",r)}const l=e(s,[["render",t],["__file","IconRevili.vue"]]);export{l as default};

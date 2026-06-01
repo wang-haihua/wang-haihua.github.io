@@ -1,0 +1,1 @@
+import{_ as e,o,a as c}from"./app-BCtFLHUo.js";const n="/logo.png",s={},t={class:"icon-reco-theme",src:n};function _(r,a){return o(),c("img",t)}const i=e(s,[["render",_],["__file","IconRecoTheme.vue"]]);export{i as default};

@@ -1,0 +1,1 @@
+import{_ as t,a as e,o as a}from"./app-BCtFLHUo.js";const r={};function o(c,l){return a(),e("div")}const s=t(r,[["render",o],["__file","1.html.vue"]]),_=JSON.parse('{"path":"/tags/Arrow/1.html","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};
