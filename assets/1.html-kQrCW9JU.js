@@ -1,0 +1,1 @@
+import{_ as e,a as t,o as a}from"./app-C6z6gQkS.js";const o={};function r(l,c){return a(),t("div")}const s=e(o,[["render",r],["__file","1.html.vue"]]),_=JSON.parse('{"path":"/tags/Claude-Code/1.html","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};

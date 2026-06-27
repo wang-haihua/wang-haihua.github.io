@@ -1,0 +1,1 @@
+import{_ as e}from"./logo-CxXS7KxG.js";import{_ as o,o as c,a as r}from"./app-C6z6gQkS.js";const s={},t={class:"icon-reco-theme",src:e};function _(n,a){return c(),r("img",t)}const f=o(s,[["render",_],["__file","IconRecoTheme.vue"]]);export{f as default};

@@ -1,0 +1,1 @@
+import{_ as e,a as t,o as a}from"./app-C6z6gQkS.js";const o={};function r(c,l){return a(),t("div")}const n=e(o,[["render",r],["__file","1.html.vue"]]),i=JSON.parse('{"path":"/categories/dulisikao/1.html","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{n as comp,i as data};
