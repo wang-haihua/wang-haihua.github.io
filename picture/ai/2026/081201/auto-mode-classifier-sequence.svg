@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="1080"
+     viewBox="0 0 1480 1080" font-family="-apple-system,'PingFang SC','Microsoft YaHei',Helvetica,sans-serif">
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="arrOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d79b00"/>
+    </marker>
+    <marker id="arrRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#b85450"/>
+    </marker>
+  </defs>
+
+  <!-- ================= Title ================= -->
+  <text x="740" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#222">
+    Auto Mode 分类器决策链路
+  </text>
+  <text x="740" y="58" text-anchor="middle" font-size="13" font-style="italic" fill="#666">
+    一次工具调用从 Claude Code 发起,到真正落地执行(或被拦截)之间经过的全部关卡
+  </text>
+
+  <!-- ================= 3 大泳道背景 ================= -->
+  <rect x="20"   y="80" width="320" height="900" fill="#eff8e2" stroke="#82b366" stroke-width="2" rx="8"/>
+  <rect x="360"  y="80" width="680" height="900" fill="#e6f0fc" stroke="#6c8ebf" stroke-width="2" rx="8"/>
+  <rect x="1080" y="80" width="380" height="900" fill="#fff7d6" stroke="#d6b656" stroke-width="2" rx="8"/>
+
+  <!-- 泳道 header 深色横条 -->
+  <rect x="20"   y="80" width="320" height="34" fill="#82b366" rx="8"/>
+  <rect x="360"  y="80" width="680" height="34" fill="#6c8ebf" rx="8"/>
+  <rect x="1080" y="80" width="380" height="34" fill="#d6b656" rx="8"/>
+
+  <text x="180"  y="104" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Claude Code</text>
+  <text x="700"  y="104" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Permission Rules + Classifier</text>
+  <text x="1270" y="104" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">结果</text>
+
+  <!-- ================= Lifeline 头(小方框) ================= -->
+  <g font-size="11" text-anchor="middle">
+    <rect x="100" y="128" width="160" height="42" fill="#d5e8d4" stroke="#82b366" rx="4"/>
+    <text x="180" y="147">Claude Code</text>
+    <text x="180" y="161" font-size="9" fill="#555">发起工具调用</text>
+  </g>
+
+  <g font-size="11" text-anchor="middle">
+    <rect x="400" y="128" width="150" height="42" fill="#dae8fc" stroke="#6c8ebf" rx="4"/>
+    <text x="475" y="147">Permission Rules</text>
+    <text x="475" y="161" font-size="9" fill="#555">allow / ask / deny 预检</text>
+
+    <rect x="610" y="128" width="150" height="42" fill="#dae8fc" stroke="#6c8ebf" rx="4"/>
+    <text x="685" y="147">Classifier Stage 1</text>
+    <text x="685" y="161" font-size="9" fill="#555">粗筛 · 64 token / temp=0</text>
+
+    <rect x="830" y="128" width="150" height="42" fill="#dae8fc" stroke="#6c8ebf" rx="4"/>
+    <text x="905" y="147">Classifier Stage 2</text>
+    <text x="905" y="161" font-size="9" fill="#555">精筛 · 4096 token + thinking</text>
+  </g>
+
+  <g font-size="11" text-anchor="middle">
+    <rect x="1100" y="128" width="140" height="42" fill="#fff2cc" stroke="#d6b656" rx="4"/>
+    <text x="1170" y="147">目标系统</text>
+    <text x="1170" y="161" font-size="9" fill="#555">repo / 云 / 生产环境</text>
+
+    <rect x="1300" y="128" width="140" height="42" fill="#fff2cc" stroke="#d6b656" rx="4"/>
+    <text x="1370" y="147">人工确认</text>
+    <text x="1370" y="161" font-size="9" fill="#555">circuit breaker 兜底</text>
+  </g>
+
+  <!-- ================= Lifeline 虚线 ================= -->
+  <g stroke-dasharray="4 4" stroke-width="1.2">
+    <line x1="180"  y1="170" x2="180"  y2="880" stroke="#82b366"/>
+    <line x1="475"  y1="170" x2="475"  y2="880" stroke="#6c8ebf"/>
+    <line x1="685"  y1="170" x2="685"  y2="880" stroke="#6c8ebf"/>
+    <line x1="905"  y1="170" x2="905"  y2="880" stroke="#6c8ebf"/>
+    <line x1="1170" y1="170" x2="1170" y2="880" stroke="#d6b656"/>
+    <line x1="1370" y1="170" x2="1370" y2="880" stroke="#d6b656"/>
+  </g>
+
+  <!-- ================= Stage 1 ================= -->
+  <rect x="20" y="188" width="1440" height="28" fill="#e6f4d7" stroke="#82b366" stroke-width="1.5" rx="4"/>
+  <circle cx="45" cy="202" r="13" fill="#b85450"/>
+  <text x="45" y="207" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">1</text>
+  <text x="70" y="207" font-size="14" font-weight="bold" fill="#333">请求发起</text>
+
+  <line x1="180" y1="255" x2="475" y2="255" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <circle cx="190" cy="255" r="9" fill="#333"/>
+  <text x="190" y="259" text-anchor="middle" font-size="10" fill="#fff">1</text>
+  <text x="330" y="248" font-size="11" text-anchor="middle" fill="#333">工具调用请求(例如 git push --force、访问 .env)</text>
+
+  <!-- ================= Stage 2 ================= -->
+  <rect x="20" y="285" width="1440" height="28" fill="#e6f4d7" stroke="#82b366" stroke-width="1.5" rx="4"/>
+  <circle cx="45" cy="299" r="13" fill="#b85450"/>
+  <text x="45" y="304" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">2</text>
+  <text x="70" y="304" font-size="14" font-weight="bold" fill="#333">规则预检 — allow / ask / deny 立即生效</text>
+
+  <line x1="475" y1="350" x2="685" y2="350" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <circle cx="485" cy="350" r="9" fill="#333"/>
+  <text x="485" y="354" text-anchor="middle" font-size="10" fill="#fff">2</text>
+  <text x="580" y="343" font-size="11" text-anchor="middle" fill="#333">未命中规则 → 转入分类器</text>
+  <text x="580" y="372" font-size="9.5" font-style="italic" fill="#555" text-anchor="middle">命中 ask → 直接人工确认;命中 deny → 直接拦截;allow 或工作目录内读写 → 直接放行执行,均不到这一步</text>
+
+  <!-- ================= Stage 3 ================= -->
+  <rect x="20" y="398" width="1440" height="28" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" rx="4"/>
+  <circle cx="45" cy="412" r="13" fill="#b85450"/>
+  <text x="45" y="417" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">3</text>
+  <text x="70" y="417" font-size="14" font-weight="bold" fill="#333">分类器粗筛 Stage 1 — 高召回,忽略用户意图</text>
+
+  <rect x="610" y="450" width="150" height="34" fill="#dae8fc" stroke="#6c8ebf" rx="4"/>
+  <text x="685" y="468" text-anchor="middle" font-size="10.5" fill="#333">只判定 &lt;block&gt;yes|no&lt;/block&gt;</text>
+  <text x="685" y="480" text-anchor="middle" font-size="9" font-style="italic" fill="#555">temperature=0,不带 thinking</text>
+
+  <line x1="685" y1="520" x2="1170" y2="520" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <circle cx="695" cy="520" r="9" fill="#333"/>
+  <text x="695" y="524" text-anchor="middle" font-size="10" fill="#fff">3</text>
+  <text x="925" y="513" font-size="11" text-anchor="middle" fill="#333">判定 no(低风险)→ 放行执行,多数调用止步于此</text>
+
+  <line x1="685" y1="560" x2="905" y2="560" stroke="#d79b00" stroke-width="2.5" marker-end="url(#arrOrange)"/>
+  <circle cx="695" cy="560" r="9" fill="#d79b00"/>
+  <text x="695" y="564" text-anchor="middle" font-size="10" fill="#fff">4</text>
+  <text x="795" y="553" font-size="11" text-anchor="middle" fill="#8b4513" font-weight="bold">判定 yes(可能有风险)→ 转精筛复核</text>
+
+  <!-- ================= Stage 4 ================= -->
+  <rect x="20" y="592" width="1440" height="28" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" rx="4"/>
+  <circle cx="45" cy="606" r="13" fill="#b85450"/>
+  <text x="45" y="611" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">4</text>
+  <text x="70" y="611" font-size="14" font-weight="bold" fill="#333">分类器精筛 Stage 2 — 高精度,应用用户意图例外</text>
+
+  <rect x="770" y="644" width="270" height="46" fill="#ffe0b3" stroke="#d79b00" stroke-width="2" rx="6"/>
+  <text x="905" y="663" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8b4513">四层优先级:hard_deny &gt;</text>
+  <text x="905" y="680" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#8b4513">soft_deny &gt; allow 例外 &gt; 用户明确意图</text>
+
+  <line x1="905" y1="722" x2="1170" y2="722" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <circle cx="915" cy="722" r="9" fill="#333"/>
+  <text x="915" y="726" text-anchor="middle" font-size="10" fill="#fff">5</text>
+  <text x="1040" y="715" font-size="11" text-anchor="middle" fill="#333">放行 → 执行</text>
+
+  <line x1="905" y1="760" x2="1370" y2="760" stroke="#d79b00" stroke-width="2.5" marker-end="url(#arrOrange)"/>
+  <circle cx="915" cy="760" r="9" fill="#d79b00"/>
+  <text x="915" y="764" text-anchor="middle" font-size="10" fill="#fff">6</text>
+  <text x="1140" y="753" font-size="11" text-anchor="middle" fill="#8b4513" font-weight="bold">拦截(Blocked by classifier)→ Claude 收到理由后尝试替代方案</text>
+
+  <!-- ================= Stage 5 ================= -->
+  <rect x="20" y="792" width="1440" height="28" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" rx="4"/>
+  <circle cx="45" cy="806" r="13" fill="#b85450"/>
+  <text x="45" y="811" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">5</text>
+  <text x="70" y="811" font-size="14" font-weight="bold" fill="#333">兜底 — denial 阈值触发 circuit breaker</text>
+
+  <rect x="1230" y="838" width="210" height="34" fill="#f8cecc" stroke="#b85450" stroke-width="1.5" rx="4"/>
+  <circle cx="1245" cy="855" r="9" fill="#b85450"/>
+  <text x="1245" y="859" text-anchor="middle" font-size="10" fill="#fff">7</text>
+  <text x="1345" y="859" text-anchor="middle" font-size="10.5" fill="#333" font-weight="bold">连续拦截 3 次 / 累计 20 次</text>
+
+  <!-- ================= 底部诊断结论(放在 lifeline 下方,不叠加) ================= -->
+  <rect x="20" y="930" width="1440" height="130" fill="#f4f8ef" stroke="#82b366" stroke-width="1.5" rx="6"/>
+  <text x="45" y="958" font-size="14" font-weight="bold" fill="#333">机制结论</text>
+
+  <text x="45" y="984" font-size="12" fill="#333">
+    ● <tspan font-weight="bold" fill="#82b366">大多数调用止步于 Stage 1</tspan> —— 工作目录内读写、pushing 到自己分支这类低风险动作,粗筛直接判 no 放行,人根本感知不到这一层
+  </text>
+  <text x="45" y="1008" font-size="12" fill="#333">
+    ● <tspan font-weight="bold" fill="#b85450">真正到 Stage 2 精筛的,才是那 3% 值得人类介入的高风险动作</tspan> —— force push、生产部署、访问敏感数据,四层优先级在这里判定
+  </text>
+  <text x="45" y="1032" font-size="12" fill="#333">
+    ● <tspan font-weight="bold" fill="#d79b00">circuit breaker 是最后一道刹车</tspan> —— 连续 3 次或累计 20 次拦截后自动回退人工逐条确认,GrowthBook 远程开关 <tspan font-family="monospace">tengu_auto_mode_config.enabled</tspan> 可整体关闭
+  </text>
+  <text x="45" y="1052" font-size="10" font-style="italic" fill="#666">
+    人的角色因此从"每次点头"变成"配置信任边界 + 校验兜底阈值"两件事
+  </text>
+
+</svg>
