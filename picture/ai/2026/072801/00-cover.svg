@@ -1,0 +1,74 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="'SF Mono','JetBrains Mono','Fira Code',ui-monospace,'Menlo',monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1714"/>
+      <stop offset="0.55" stop-color="#211c18"/>
+      <stop offset="1" stop-color="#2a221c"/>
+    </linearGradient>
+    <linearGradient id="clay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D97757"/>
+      <stop offset="1" stop-color="#E8956F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#D97757" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .cmt   { fill:#6b625a; font-size:19px; }
+      .kw    { fill:#D97757; font-weight:700; }
+      .fn    { fill:#c9a875; }
+      .txt   { fill:#e8e2da; }
+      .dim   { fill:#8a807696; }
+      .del   { fill:#c65f4e; }
+      .add   { fill:#7fa86a; }
+      .prompt{ fill:#D97757; font-weight:700; }
+      .h1    { fill:#f4efe8; font-weight:700; font-family:'得意黑','SmileySans-Oblique','Smiley Sans',ui-sans-serif,system-ui,sans-serif; }
+      .tag   { fill:#8a8076; font-size:17px; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1280" height="720" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="720" fill="url(#glow)"/>
+
+  <!-- terminal window frame -->
+  <rect x="96" y="96" width="1088" height="528" rx="16" fill="#14110e" stroke="#3a322b" stroke-width="1.5"/>
+  <!-- title bar -->
+  <rect x="96" y="96" width="1088" height="46" rx="16" fill="#211c18"/>
+  <rect x="96" y="126" width="1088" height="16" fill="#211c18"/>
+  <circle cx="126" cy="119" r="7" fill="#c65f4e"/>
+  <circle cx="150" cy="119" r="7" fill="#d6a95a"/>
+  <circle cx="174" cy="119" r="7" fill="#7fa86a"/>
+  <text x="640" y="125" text-anchor="middle" class="dim" font-size="16px">claude-code — skills</text>
+
+  <!-- terminal body -->
+  <!-- line: prompt running claude -->
+  <text x="130" y="196" font-size="20px"><tspan class="prompt">❯</tspan> <tspan class="txt">claude</tspan> <tspan class="dim">--dangerously-skip-bloat</tspan></text>
+
+  <!-- the while loop comment = essence -->
+  <text x="130" y="248" class="cmt">// Claude Code 本质是一个 while(true)</text>
+
+  <text x="130" y="286" font-size="20px"><tspan class="kw">while</tspan> <tspan class="txt">(true) {</tspan></text>
+  <text x="178" y="320" font-size="19px"><tspan class="fn">gatherContext</tspan><tspan class="txt">()</tspan> <tspan class="dim">→</tspan> <tspan class="fn">takeAction</tspan><tspan class="txt">()</tspan> <tspan class="dim">→</tspan> <tspan class="fn">verify</tspan><tspan class="txt">()</tspan></text>
+
+  <!-- diff: the core message, remove bloated skills -->
+  <text x="178" y="360" font-size="19px"><tspan class="del">-  load</tspan> <tspan class="dim">bloated-skill</tspan> <tspan class="del">// 22 子 skill，吃掉 40% 窗口</tspan></text>
+  <text x="178" y="392" font-size="19px"><tspan class="add">+  keep</tspan>  <tspan class="txt">context</tspan> <tspan class="add">clean</tspan> <tspan class="dim">// 把判断权拿回来</tspan></text>
+  <text x="130" y="428" font-size="20px" class="txt">}</text>
+
+  <!-- divider -->
+  <rect x="130" y="454" width="1020" height="1" fill="#3a322b"/>
+
+  <!-- big title -->
+  <text x="130" y="512" class="h1" font-size="40px">该删掉那些臃肿的 Skill 了</text>
+  <text x="130" y="556" class="tag">从 Claude Code 的执行原理，谈上下文窗口为何寸土寸金</text>
+
+  <!-- footer signature line -->
+  <text x="130" y="600" font-size="18px"><tspan class="prompt">❯</tspan> <tspan class="dim">Build the loop.</tspan> <tspan class="txt">Stay the engineer</tspan><tspan class="prompt">_</tspan></text>
+
+  <!-- Claude clay mark (top-right corner accent) -->
+  <g transform="translate(1092,176)">
+    <path d="M0 40 C 0 18, 18 0, 40 0 C 62 0, 80 18, 80 40 C 80 62, 62 80, 40 80 C 18 80, 0 62, 0 40 Z" fill="none" stroke="url(#clay)" stroke-width="3" opacity="0.85"/>
+    <text x="40" y="52" text-anchor="middle" font-size="34px" class="kw">✳</text>
+  </g>
+</svg>

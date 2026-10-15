@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" font-family="-apple-system, 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#9aa5b1"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <!-- ===== Layer 1: 卡片 ===== -->
+  <g>
+    <text x="140" y="40" text-anchor="middle" font-size="19" font-weight="600" fill="#2c3e50">卡片</text>
+    <text x="140" y="62" text-anchor="middle" font-size="12.5" fill="#8a94a6">知识的原子化</text>
+    <!-- scattered cards -->
+    <g stroke="#c6d0dc" stroke-width="1.5" fill="#f4f7fb">
+      <rect x="70" y="95" width="52" height="36" rx="4"/>
+      <rect x="150" y="120" width="52" height="36" rx="4"/>
+      <rect x="95" y="180" width="52" height="36" rx="4"/>
+      <rect x="175" y="205" width="52" height="36" rx="4"/>
+      <rect x="60" y="255" width="52" height="36" rx="4"/>
+      <rect x="150" y="278" width="52" height="36" rx="4"/>
+    </g>
+    <g stroke="#dbe2ea" stroke-width="1.2" fill="none">
+      <line x1="122" y1="113" x2="150" y2="138"/>
+      <line x1="147" y1="198" x2="175" y2="223"/>
+    </g>
+    <text x="140" y="345" text-anchor="middle" font-size="12.5" fill="#8a94a6">connect &gt; collect</text>
+  </g>
+
+  <!-- arrow 1 -->
+  <line x1="270" y1="205" x2="330" y2="205" stroke="#9aa5b1" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== Layer 2: 体系 ===== -->
+  <g>
+    <text x="440" y="40" text-anchor="middle" font-size="19" font-weight="600" fill="#2c3e50">体系</text>
+    <text x="440" y="62" text-anchor="middle" font-size="12.5" fill="#8a94a6">卡片连成网络</text>
+    <!-- connected network -->
+    <g stroke="#7fa8d0" stroke-width="1.6" fill="none" opacity="0.85">
+      <line x1="440" y1="120" x2="370" y2="180"/>
+      <line x1="440" y1="120" x2="510" y2="180"/>
+      <line x1="370" y1="180" x2="510" y2="180"/>
+      <line x1="370" y1="180" x2="400" y2="260"/>
+      <line x1="510" y1="180" x2="480" y2="260"/>
+      <line x1="400" y1="260" x2="480" y2="260"/>
+      <line x1="440" y1="120" x2="480" y2="260"/>
+    </g>
+    <g fill="#4a7fb5" stroke="#ffffff" stroke-width="2">
+      <circle cx="440" cy="120" r="12"/>
+      <circle cx="370" cy="180" r="12"/>
+      <circle cx="510" cy="180" r="12"/>
+      <circle cx="400" cy="260" r="12"/>
+      <circle cx="480" cy="260" r="12"/>
+    </g>
+    <text x="440" y="345" text-anchor="middle" font-size="12.5" fill="#8a94a6">自下而上涌现</text>
+  </g>
+
+  <!-- arrow 2 -->
+  <line x1="570" y1="205" x2="630" y2="205" stroke="#9aa5b1" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ===== Layer 3: 格栅 ===== -->
+  <g>
+    <text x="740" y="40" text-anchor="middle" font-size="19" font-weight="600" fill="#2c3e50">格栅</text>
+    <text x="740" y="62" text-anchor="middle" font-size="12.5" fill="#8a94a6">跨学科多元模型</text>
+    <!-- latticework grid -->
+    <g stroke="#c99a5b" stroke-width="1.8" opacity="0.9">
+      <line x1="660" y1="110" x2="660" y2="290"/>
+      <line x1="700" y1="110" x2="700" y2="290"/>
+      <line x1="740" y1="110" x2="740" y2="290"/>
+      <line x1="780" y1="110" x2="780" y2="290"/>
+      <line x1="820" y1="110" x2="820" y2="290"/>
+      <line x1="660" y1="130" x2="820" y2="130"/>
+      <line x1="660" y1="170" x2="820" y2="170"/>
+      <line x1="660" y1="210" x2="820" y2="210"/>
+      <line x1="660" y1="250" x2="820" y2="250"/>
+    </g>
+    <!-- intersection nodes -->
+    <g fill="#b07d3a">
+      <circle cx="700" cy="170" r="5"/>
+      <circle cx="740" cy="130" r="5"/>
+      <circle cx="740" cy="210" r="5"/>
+      <circle cx="780" cy="170" r="5"/>
+      <circle cx="700" cy="250" r="5"/>
+      <circle cx="780" cy="250" r="5"/>
+    </g>
+    <text x="740" y="345" text-anchor="middle" font-size="12.5" fill="#8a94a6">避免只有一把锤子</text>
+  </g>
+</svg>
